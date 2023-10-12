@@ -1,0 +1,85 @@
+version: 3
+
+vars:
+  GOLANGCI_LINT_VERSION: 1.54.2
+  GOFUMPT_VERSION: 0.5.0
+
+tasks:
+  default:
+    cmds:
+    - task: test
+    - task: lint
+    - task: install
+
+  jrdn-config:
+    deps:
+    - install
+    - remove-cache
+    cmds:
+    - cmd: |
+        pwsh -nol -nop -c "if ((test-path ~/.config/gimme)) {  remove-item  -recurse -force ~/.config/gimme }"
+      platforms:
+      - windows
+    - cmd: rm -rf ~/.config/gimme
+      platforms:
+      - linux
+      - darwin
+    - gimme some jrdn/config@dev
+
+  install:
+    cmds:
+    - go install .
+
+  test:
+    cmds:
+    - go test ./...
+
+  lint:
+    deps: [ lintdeps ]
+    cmds:
+    - go mod tidy
+    - bin/gofumpt -l -w .
+    - bin/golangci-lint run .
+
+  lintdeps:
+    internal: true
+    deps:
+    - dep-golangci-lint
+    - dep-gofumpt
+    env:
+      GOBIN: "{{.ROOT_DIR}}/bin"
+
+  dep-gofumpt:
+    internal: true
+    dir: ./bin
+    env:
+      GOBIN: "{{.TASKFILE_DIR}}/bin"
+    status:
+    - test -f gofumpt.exe || test -f gofumpt
+    cmds:
+    - "go install mvdan.cc/gofumpt@v{{.GOFUMPT_VERSION}}"
+
+  dep-golangci-lint:
+    internal: true
+    dir: ./bin
+    status:
+    - test -f golangci-lint.exe
+    cmds:
+    - cmd: pwsh -nologo -noprofile -command \
+        "Invoke-Webrequest https://github.com/golangci/golangci-lint/releases/download/v{{.GOLANGCI_LINT_VERSION}}/golangci-lint-{{.GOLANGCI_LINT_VERSION}}-windows-{{ARCH}}.zip -Outfile golangci-lint.zip"
+      platforms: [ windows ]
+    - cmd: curl https://github.com/golangci/golangci-lint/releases/download/v{{.GOLANGCI_LINT_VERSION}}/golangci-lint-{{.GOLANGCI_LINT_VERSION}}-linux-{{ARCH}}.zip -o golangci-lint.zip
+      platforms: [ linux ]
+    - unzip -o -j ./golangci-lint.zip
+
+  remove-cache:
+    status:
+    - "[ ! -e ~/.config/gimme ]"
+    cmds:
+    - cmd: pwsh -nologo -noprofile -c 'remove-item -r -fo ~/.config/gimme'
+      platforms: [ windows ]
+
+  clean:
+    cmds:
+    - cmd: pwsh -nologo -noprofile -c 'remove-item -r -fo ./bin ; remove-item -r -fo ./.task'
+      platforms: [ windows ]
