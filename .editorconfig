@@ -1,0 +1,24 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+max_line_length = 120
+tab_width = 2
+
+[*.go]
+indent_size = 4
+indent_style = tab
+trim_trailing_whitespace = true
+ij_go_import_sorting = goimports
+ij_go_run_go_fmt_on_reformat = true
+ij_go_local_group_mode = project
+
+[{*.yaml,*.yml}]
+indent_style = space
+indent_size = 2
+ij_yaml_spaces_within_braces = true
+ij_yaml_spaces_within_brackets = true
+ij_yaml_indent_sequence_value = false
+ij_yaml_block_mapping_on_new_line = false
