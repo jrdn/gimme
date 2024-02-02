@@ -4,8 +4,8 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/gimme-repos/gimme/pkg/condition"
-	"github.com/gimme-repos/gimme/pkg/gimme/data"
+	"github.com/jrdn/gimme/pkg/condition"
+	"github.com/jrdn/gimme/pkg/gimme/data"
 )
 
 type Step struct {

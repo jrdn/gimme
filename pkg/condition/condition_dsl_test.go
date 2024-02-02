@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/gimme-repos/gimme/pkg/condition"
+	"github.com/jrdn/gimme/pkg/condition"
 )
 
 func TestConditionDSL(t *testing.T) {
@@ -29,12 +29,14 @@ func TestConditionDSL(t *testing.T) {
 		{input: "[os eq linux arch eq amd64]", expected: false},
 		{input: "{os eq linux arch eq amd64}", expected: true},
 		{input: "has_spaces eq \"foo bar\"", expected: true},
-		{input: `
+		{
+			input: `
 [
   {os eq windows arch eq badvalue}
   {os eq windows arch eq badvalue}
 ]
-`, expected: true},
+`, expected: true,
+		},
 	}
 	for _, test := range tests {
 		t.Run("", func(t *testing.T) {

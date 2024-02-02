@@ -5,11 +5,11 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/gimme-repos/gimme/pkg/gimme/data"
-	"github.com/gimme-repos/gimme/pkg/gimme/step/base"
-	"github.com/gimme-repos/gimme/pkg/gimme/step/pwsh"
-	"github.com/gimme-repos/gimme/pkg/gimme/step/require_windows_admin"
-	"github.com/gimme-repos/gimme/pkg/gimme/step/taskfile"
+	"github.com/jrdn/gimme/pkg/gimme/data"
+	"github.com/jrdn/gimme/pkg/gimme/step/base"
+	"github.com/jrdn/gimme/pkg/gimme/step/pwsh"
+	"github.com/jrdn/gimme/pkg/gimme/step/require_windows_admin"
+	"github.com/jrdn/gimme/pkg/gimme/step/taskfile"
 )
 
 type Step interface {

@@ -4,7 +4,7 @@ import (
 	"github.com/rs/zerolog"
 	"github.com/spf13/cobra"
 
-	"github.com/j13g/goutil/log"
+	"github.com/jrdn/goutil/log"
 )
 
 func Root() *cobra.Command {

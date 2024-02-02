@@ -1,6 +1,6 @@
 package cmd
 
-import "github.com/j13g/goutil/cli"
+import "github.com/jrdn/goutil/cli"
 
 func SetupGimmeCLI(app *cli.CLI) {
 	app.SetRoot(Root())

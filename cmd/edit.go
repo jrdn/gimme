@@ -8,8 +8,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/gimme-repos/gimme/pkg/gimme"
-	"github.com/gimme-repos/gimme/pkg/gimme/config"
+	"github.com/jrdn/gimme/pkg/gimme"
+	"github.com/jrdn/gimme/pkg/gimme/config"
 )
 
 func Edit() *cobra.Command {

@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/j13g/goutil/cli"
+	"github.com/jrdn/goutil/cli"
 
-	"github.com/gimme-repos/gimme/cmd"
+	"github.com/jrdn/gimme/cmd"
 )
 
 func main() {

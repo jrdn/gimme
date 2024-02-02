@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"regexp"
 
-	"github.com/j13g/goutil/errs"
-	"github.com/j13g/goutil/regex"
+	"github.com/jrdn/goutil/errs"
+	"github.com/jrdn/goutil/regex"
 )
 
 var (

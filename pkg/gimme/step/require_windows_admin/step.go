@@ -6,8 +6,8 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/gimme-repos/gimme/pkg/gimme/data"
-	"github.com/gimme-repos/gimme/pkg/gimme/step/base"
+	"github.com/jrdn/gimme/pkg/gimme/data"
+	"github.com/jrdn/gimme/pkg/gimme/step/base"
 )
 
 func New() *Step {

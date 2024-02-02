@@ -7,9 +7,9 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/j13g/goutil/log"
+	"github.com/jrdn/goutil/log"
 
-	"github.com/gimme-repos/gimme/pkg/condition"
+	"github.com/jrdn/gimme/pkg/condition"
 )
 
 type InstallContext map[string]any

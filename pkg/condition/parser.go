@@ -7,7 +7,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/j13g/goutil/regex"
+	"github.com/jrdn/goutil/regex"
 )
 
 var parseError = errors.New("parsing failed")

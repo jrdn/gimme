@@ -3,7 +3,7 @@ package source
 import (
 	"errors"
 
-	"github.com/gimme-repos/gimme/pkg/gimme/config"
+	"github.com/jrdn/gimme/pkg/gimme/config"
 )
 
 var ErrSourcePullFailed = errors.New("failed to pull source")

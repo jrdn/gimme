@@ -9,8 +9,8 @@ import (
 	"path"
 	"path/filepath"
 
-	"github.com/gimme-repos/gimme/pkg/gimme/config"
-	"github.com/gimme-repos/gimme/pkg/gimme/data"
+	"github.com/jrdn/gimme/pkg/gimme/config"
+	"github.com/jrdn/gimme/pkg/gimme/data"
 )
 
 type gitSource struct {

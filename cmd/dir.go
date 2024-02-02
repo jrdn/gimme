@@ -7,7 +7,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/gimme-repos/gimme/pkg/gimme"
+	"github.com/jrdn/gimme/pkg/gimme"
 )
 
 func Dir() *cobra.Command {

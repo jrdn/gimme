@@ -7,9 +7,9 @@ import (
 	"github.com/jedib0t/go-pretty/v6/table"
 	"github.com/spf13/cobra"
 
-	"github.com/j13g/goutil/cli/outputter"
+	"github.com/jrdn/goutil/cli/outputter"
 
-	"github.com/gimme-repos/gimme/pkg/gimme"
+	"github.com/jrdn/gimme/pkg/gimme"
 )
 
 func List() *cobra.Command {

@@ -6,11 +6,11 @@ import (
 	"io/fs"
 	"path/filepath"
 
-	"github.com/j13g/goutil/log"
+	"github.com/jrdn/goutil/log"
 
-	"github.com/gimme-repos/gimme/pkg/gimme/config"
-	"github.com/gimme-repos/gimme/pkg/gimme/data"
-	"github.com/gimme-repos/gimme/pkg/gimme/source"
+	"github.com/jrdn/gimme/pkg/gimme/config"
+	"github.com/jrdn/gimme/pkg/gimme/data"
+	"github.com/jrdn/gimme/pkg/gimme/source"
 )
 
 const GimmeFile = "gimme.jsonnet"

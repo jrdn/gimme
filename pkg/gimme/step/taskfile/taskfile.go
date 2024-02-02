@@ -6,12 +6,11 @@ import (
 	"os"
 
 	"github.com/go-task/task/v3"
-	"github.com/go-task/task/v3/taskfile"
+	"github.com/go-task/task/v3/taskfile/ast"
+	"github.com/jrdn/goutil/log"
 
-	"github.com/j13g/goutil/log"
-
-	"github.com/gimme-repos/gimme/pkg/gimme/data"
-	"github.com/gimme-repos/gimme/pkg/gimme/step/base"
+	"github.com/jrdn/gimme/pkg/gimme/data"
+	"github.com/jrdn/gimme/pkg/gimme/step/base"
 )
 
 func New() *Step {
@@ -62,9 +61,8 @@ func (s *Step) Exec(ctx context.Context, installContext data.InstallContext) err
 		Str("dir", dir).
 		Interface("spec", installContext[data.SpecKey]).
 		Msg("running task")
-	return e.Run(ctx, taskfile.Call{
-		Task:   target,
-		Silent: false,
-		Direct: true,
+
+	return e.RunTask(ctx, ast.Call{
+		Task: target,
 	})
 }
